@@ -189,7 +189,19 @@ const Artists: React.FC = () => {
         soundcloud: 'https://soundcloud.com'
       },
       genres: ['Aggresive', 'Trap', 'Westcoast', 'Rock']
-    }
+    },
+    {
+      name: 'CLEFY',
+      role: 'Rapper / Songwriter',
+      image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/481829960_606956168833683_5929302838862598948_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEuLvV4f44N1-AUyiFaxFZ_cYP4qQgWKmhxg_ipCBYqaPC1Fgq5KCjZpZSSUA0k9Yrw7cIJNsPaOEEDjiU4asDG&_nc_ohc=fqdWrkDABDYQ7kNvwHa2XQ8&_nc_oc=AdkFhALj-z2zNf-Xrx3PfB367C8aKuwIyft49ttAtMh1f-WmY_LdrD7FkGyxXrAwElQ&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=jgewmG7x1fQ6AuDmxMf29Q&oh=00_AfH5gbRVZKq5sQMzu4x_DF442QJs3xvX2W2heYIBOcTbDw&oe=681C54A2',
+      bio: 'Chamod, founder and CEO of Onyx Music, is a passionate music producer and mixing engineer. Specializing in Melodic Trap, Pop, and Hyperpop, he creates emotionally driven tracks that connect deeply with listeners. With a vision to push boundaries in sound, Chamod leads Onyx Music with creativity, precision, and heart.',
+      socialLinks: {
+        instagram: 'https://www.instagram.com/thechamod/',
+        twitter: 'https://twitter.com',
+        soundcloud: 'https://soundcloud.com'
+      },
+      genres: ['Melodic', 'Trap', 'Pop', 'Hyperpop']
+    }    
   ];
 
   useEffect(() => {
