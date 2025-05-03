@@ -1,121 +1,112 @@
-// Firebase Cloud Function for al-master-1cd6e project
-// This code goes in your functions/index.js file
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
-const axios = require('axios');
+import React, { createContext, useContext, ReactNode } from 'react';
+import { initializeApp } from 'firebase/app';
+import { 
+  getDatabase, 
+  ref, 
+  push, 
+  set, 
+  onValue, 
+  query, 
+  orderByChild 
+} from 'firebase/database';
 
-admin.initializeApp({
-  apiKey: "AIzaSyB7SDDKQRL_sjDKfRPB4ifuHp8oBdB9-VE",
-  authDomain: "al-master-1cd6e.firebaseapp.com",
-  databaseURL: "https://al-master-1cd6e-default-rtdb.firebaseio.com",
-  projectId: "al-master-1cd6e",
-  storageBucket: "al-master-1cd6e.firebasestorage.app",
-  messagingSenderId: "932509501027",
-  appId: "1:932509501027:web:880015a9d5e088775dda56"
-});
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
+};
 
-// Your Telegram bot token from BotFather
-const TELEGRAM_TOKEN = '7086890866:AAGJNYB2jrVzI48EvjNNldkzGITMkoBxkkI';
+// Validate required configuration
+if (!firebaseConfig.databaseURL) {
+  throw new Error('Firebase Database URL is not configured. Please set VITE_FIREBASE_DATABASE_URL in your environment variables.');
+}
 
-// Your Telegram chat ID
-const TELEGRAM_CHAT_ID = '8138162501';
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
-// Listen for new bookings in Realtime Database
-exports.sendBookingNotification = functions.database
-  .ref('/bookings/{bookingId}')
-  .onCreate(async (snapshot, context) => {
+// Types for orders
+export interface BookingOrder {
+  id?: string;
+  name: string;
+  email: string;
+  phone: string;
+  date: string;
+  service: string;
+  message: string;
+  timestamp: number;
+}
+
+// Context type
+interface FirebaseContextType {
+  saveBooking: (booking: Omit<BookingOrder, 'id' | 'timestamp'>) => Promise<string>;
+  saveContactMessage: (name: string, email: string, message: string) => Promise<string>;
+}
+
+const FirebaseContext = createContext<FirebaseContextType | undefined>(undefined);
+
+export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  // Save a new booking order
+  const saveBooking = async (booking: Omit<BookingOrder, 'id' | 'timestamp'>): Promise<string> => {
     try {
-      // Get the booking data
-      const bookingData = snapshot.val();
-      const bookingId = context.params.bookingId;
+      const bookingsRef = ref(database, 'bookings');
+      const newBookingRef = push(bookingsRef);
       
-      // Format the message
-      const message = formatBookingMessage(bookingId, bookingData);
+      const bookingWithTimestamp = {
+        ...booking,
+        timestamp: Date.now()
+      };
       
-      // Send to Telegram
-      await sendTelegramMessage(message);
-      
-      console.log(`Successfully sent notification for booking ${bookingId}`);
-      return null;
+      await set(newBookingRef, bookingWithTimestamp);
+      return newBookingRef.key || '';
     } catch (error) {
-      console.error('Error sending booking notification:', error);
-      return null;
+      console.error('Error saving booking:', error);
+      throw error;
     }
-  });
+  };
 
-// Listen for new contact messages in Realtime Database
-exports.sendContactMessageNotification = functions.database
-  .ref('/contactMessages/{messageId}')
-  .onCreate(async (snapshot, context) => {
+  // Save a contact message
+  const saveContactMessage = async (name: string, email: string, message: string): Promise<string> => {
     try {
-      // Get the message data
-      const messageData = snapshot.val();
-      const messageId = context.params.messageId;
+      const messagesRef = ref(database, 'contactMessages');
+      const newMessageRef = push(messagesRef);
       
-      // Format the message
-      const message = formatContactMessage(messageId, messageData);
+      await set(newMessageRef, {
+        name,
+        email,
+        message,
+        timestamp: Date.now()
+      });
       
-      // Send to Telegram
-      await sendTelegramMessage(message);
-      
-      console.log(`Successfully sent notification for contact message ${messageId}`);
-      return null;
+      return newMessageRef.key || '';
     } catch (error) {
-      console.error('Error sending contact message notification:', error);
-      return null;
+      console.error('Error saving contact message:', error);
+      throw error;
     }
-  });
+  };
 
-/**
- * Format the booking data into a readable message
- */
-function formatBookingMessage(bookingId, bookingData) {
-  const { name, email, phone, date, service, message, timestamp } = bookingData;
-  
-  // Format date from timestamp
-  const bookingDate = timestamp ? new Date(timestamp).toLocaleString() : 'N/A';
-  
-  // Create message
-  return `🔔 *NEW BOOKING RECEIVED* 🔔\n\n` +
-    `*Booking ID:* ${bookingId}\n` +
-    `*Date Submitted:* ${bookingDate}\n` +
-    `*Client Name:* ${name || 'N/A'}\n` +
-    `*Email:* ${email || 'N/A'}\n` +
-    `*Phone:* ${phone || 'N/A'}\n` +
-    `*Requested Date:* ${date || 'N/A'}\n` +
-    `*Service:* ${service || 'N/A'}\n` +
-    `*Message:* ${message || 'None provided'}`;
-}
+  const value = {
+    saveBooking,
+    saveContactMessage
+  };
 
-/**
- * Format the contact message data into a readable message
- */
-function formatContactMessage(messageId, messageData) {
-  const { name, email, message, timestamp } = messageData;
-  
-  // Format date from timestamp
-  const messageDate = timestamp ? new Date(timestamp).toLocaleString() : 'N/A';
-  
-  // Create message
-  return `📨 *NEW CONTACT MESSAGE* 📨\n\n` +
-    `*Message ID:* ${messageId}\n` +
-    `*Date:* ${messageDate}\n` +
-    `*From:* ${name || 'N/A'}\n` +
-    `*Email:* ${email || 'N/A'}\n` +
-    `*Message:* ${message || 'No message content'}`;
-}
+  return (
+    <FirebaseContext.Provider value={value}>
+      {children}
+    </FirebaseContext.Provider>
+  );
+};
 
-/**
- * Send message to Telegram
- */
-async function sendTelegramMessage(message) {
-  const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`;
-  
-  const response = await axios.post(telegramApiUrl, {
-    chat_id: TELEGRAM_CHAT_ID,
-    text: message,
-    parse_mode: 'Markdown'
-  });
-  
-  return response.data;
-}
+// Custom hook to use the Firebase context
+export const useFirebase = (): FirebaseContextType => {
+  const context = useContext(FirebaseContext);
+  if (context === undefined) {
+    throw new Error('useFirebase must be used within a FirebaseProvider');
+  }
+  return context;
+};
