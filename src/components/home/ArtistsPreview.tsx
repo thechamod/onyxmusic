@@ -52,7 +52,12 @@ const ArtistsPreview: React.FC = () => {
       name: 'RIX',
       image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/485040617_688294940374187_6007777225130452546_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHRaMrqtxX_GW3SDIFMNHGPiCCWyt45Cy6IIJbK3jkLLhl1rJn7in3oWNT4yyMMJtXxOfBiVnC0WipO34RLpBuW&_nc_ohc=73WHcWlP3woQ7kNvwGDHOnE&_nc_oc=AdnDyk5Kr112UfVCm5dgjzNE_8aks9_FxeR2IAfbN6OyBeYHQM_Lomb4eUmnOfbw78M&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=VHucCeorgIdEMWs2cqOohA&oh=00_AfFe7uV0QgFt6_R_Vsm5-SsrSQ7Dxpl9C9KKttVbfT8ydw&oe=681BD295',
       role: 'Rapper / Songwriter'
-    }
+    },
+    {
+      name: 'CLEFY',
+      image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/481829960_606956168833683_5929302838862598948_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEuLvV4f44N1-AUyiFaxFZ_cYP4qQgWKmhxg_ipCBYqaPC1Fgq5KCjZpZSSUA0k9Yrw7cIJNsPaOEEDjiU4asDG&_nc_ohc=fqdWrkDABDYQ7kNvwHa2XQ8&_nc_oc=AdkFhALj-z2zNf-Xrx3PfB367C8aKuwIyft49ttAtMh1f-WmY_LdrD7FkGyxXrAwElQ&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=SJXUacTJU8lUOSrPJynlYg&oh=00_AfE5L_ZptgxWJS8fy44dAbHFOB_wtwIGBoJCBM8V4Ilj9Q&oe=681C54A2',
+      role: 'Mixing Engineer / CEO'
+    }    
   ];
 
   return (
