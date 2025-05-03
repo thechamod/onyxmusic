@@ -156,8 +156,8 @@ const Artists: React.FC = () => {
   const artists = [
     {
       name: 'Y30',
-      role: 'Producer / Vocalist',
-      image: 'https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      role: 'Rapper / Songwriter',
+      image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/481479195_1846203492834089_8896037436071034314_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG9se2S4uUrIKc6HXGmKbZH9I5UT-9nTV_0jlRP72dNXxjC28SVEKyt9vOZ4we0zBL_1NqMtP95C-CG2f2LqKBJ&_nc_ohc=499dZoEbFyYQ7kNvwEr9pE2&_nc_oc=AdnpLqT_-NwwBKGxJO_y1DOWFNQe4VTeUI1JnqHIbtieRmVM9jR75MlkMM2rZGDqsw0&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=H7ZkQqM8OwwSKWtiama6IA&oh=00_AfGcyR_nJUNqkIMA5UmPQ7w3ui5S453iBmtOuhnSq4C6_A&oe=681BD102',
       bio: 'Y30 is a multi-talented producer and vocalist known for creating dark, atmospheric soundscapes and haunting melodies. With a background in classical music and a passion for electronic production, Y30 brings a unique perspective to every track.',
       socialLinks: {
         instagram: 'https://instagram.com',
@@ -180,7 +180,7 @@ const Artists: React.FC = () => {
     },
     {
       name: 'VIX',
-      role: 'DJ / Producer',
+      role: 'Rapper / Songwriter',
       image: 'https://images.pexels.com/photos/1644616/pexels-photo-1644616.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       bio: 'VIX is at the forefront of electronic music innovation, pushing boundaries with experimental sounds and infectious rhythms. As both a renowned DJ and meticulous producer, VIX brings high energy to live performances and studio productions alike.',
       socialLinks: {
