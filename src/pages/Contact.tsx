@@ -22,12 +22,12 @@ const Contact: React.FC = () => {
     {
       icon: <MapPin size={24} className="text-fire-red" />,
       title: 'Address',
-      content: '123 Beat Street, Music District, Colombo, Sri Lanka'
+      content: '305/4, Mahawehera, Madipola, Sri Lanka'
     },
     {
       icon: <Phone size={24} className="text-fire-red" />,
       title: 'Phone',
-      content: '+94 123 456 789'
+      content: '+94 72 128 5842'
     },
     {
       icon: <Mail size={24} className="text-fire-red" />,
