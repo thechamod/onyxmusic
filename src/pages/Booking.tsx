@@ -21,7 +21,7 @@ const Booking: React.FC = () => {
   const services = [
     {
       name: 'Recording Session',
-      price: '$80/hour',
+      price: '3500LKR/hour',
       description: 'Professional recording in our state-of-the-art studio with an experienced engineer.',
       features: [
         'Up to 4 hours minimum booking',
@@ -32,7 +32,7 @@ const Booking: React.FC = () => {
     },
     {
       name: 'Mixing & Mastering',
-      price: 'From $300/song',
+      price: 'From 10000LKR/song',
       description: 'Professional mixing and mastering to give your tracks a polished, commercial sound.',
       features: [
         '2 rounds of revisions included',
@@ -43,7 +43,7 @@ const Booking: React.FC = () => {
     },
     {
       name: 'Full Production Package',
-      price: 'From $1000/song',
+      price: 'From 16000LKR/song',
       description: 'End-to-end production from concept to final master, including instrumentation and arrangement.',
       features: [
         'Beat production and instrumentation',
