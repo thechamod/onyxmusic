@@ -170,7 +170,7 @@ const Artists: React.FC = () => {
       name: 'W',
       role: 'Rapper / Songwriter',
       image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/472345858_1312545273091867_1276585712862569140_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHH1St2HWdJ1ycZshwEs8qeTeCvnX8POL5N4K-dfw84vm1Euf6EJDdWakRjZgUSPhvx8K9dvbxgqzfYLkc6I6lr&_nc_ohc=3XMsGl_d390Q7kNvwELHKp9&_nc_oc=AdkG2TzzmHJVnDZkE0siOOgHdEW2UyI5u_RUAuI3hvpvXmpY4zWwh4_r28bTho79kxI&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=2qGLrYOLxZiu_efh4y4AKg&oh=00_AfHlqd2fzVbR9LTM7QtFtfmga7Pc0LkVxa93PRhinv4XoA&oe=681BDA23',
-      bio: 'W is a dynamic trap artist in the Bloodroots team, known for his smooth flows, melodic style, and emotional depth. His music blends modern trap beats with real-life feelings, delivering a vibe that's both catchy and heartfelt. W’s sound connects with those who ride through life with rhythm and soul.',
+      bio: 'W is a dynamic trap artist in the Bloodroots team, known for his smooth flows, melodic style, and emotional depth. His music blends modern trap beats with real-life feelings, delivering a vibe that's both catchy and heartfelt.',
       socialLinks: {
         instagram: 'https://www.instagram.com/d.re_w_/',
         twitter: 'https://twitter.com',
