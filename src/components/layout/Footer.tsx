@@ -74,11 +74,11 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-fire-red mt-1 flex-shrink-0" />
-                <span className="text-gray-400">123 Beat Street, Music District, Colombo, Sri Lanka</span>
+                <span className="text-gray-400">305/4, Mahawehera, Madipola, Sri Lanka</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-fire-red flex-shrink-0" />
-                <span className="text-gray-400">+94 123 456 789</span>
+                <span className="text-gray-400">+94 72 128 5842</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-fire-red flex-shrink-0" />
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-onyx-light/30 mt-10 pt-6 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Onyx Music Studio. All rights reserved. Created by Chamod Wijekoon.</p>
+          <p>&copy; {new Date().getFullYear()} Onyx Music Studio. All rights reserved.</p>
         </div>
       </div>
     </footer>
