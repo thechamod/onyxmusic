@@ -53,7 +53,7 @@ const Studio: React.FC = () => {
       title: 'Software & DAWs',
       icon: <FileAudio size={28} />,
       items: [
-        'Pro Tools Ultimate',
+        'FL Studio',
         'Logic Pro X',
         'Ableton Live Suite',
         'Native Instruments Komplete',
