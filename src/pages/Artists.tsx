@@ -179,7 +179,7 @@ const Artists: React.FC = () => {
       genres: ['Hip-Hop', 'Rap', 'Trap', 'Alternative']
     },
     {
-      name: 'VIX',
+      name: 'RIX',
       role: 'Rapper / Songwriter',
       image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/485040617_688294940374187_6007777225130452546_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHRaMrqtxX_GW3SDIFMNHGPiCCWyt45Cy6IIJbK3jkLLhl1rJn7in3oWNT4yyMMJtXxOfBiVnC0WipO34RLpBuW&_nc_ohc=73WHcWlP3woQ7kNvwGDHOnE&_nc_oc=AdnDyk5Kr112UfVCm5dgjzNE_8aks9_FxeR2IAfbN6OyBeYHQM_Lomb4eUmnOfbw78M&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=VHucCeorgIdEMWs2cqOohA&oh=00_AfFe7uV0QgFt6_R_Vsm5-SsrSQ7Dxpl9C9KKttVbfT8ydw&oe=681BD295',
       bio: 'VIX is at the forefront of electronic music innovation, pushing boundaries with experimental sounds and infectious rhythms. As both a renowned DJ and meticulous producer, VIX brings high energy to live performances and studio productions alike.',
