@@ -73,11 +73,8 @@ function App(): JSX.Element {
             <div className="content">
               {/* Section with fade-in animation */}
               <section className="fade-in">
-                <h1>Onyx Music Studio</h1>
+                <h1>Onyx Music</h1>
                 <p>Experience the best in music production.</p>
-              </section>
-              
-                </div>
               </section>
             </div>
           </main>
