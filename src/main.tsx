@@ -1,16 +1,17 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import App from './App.tsx';
 import { FirebaseProvider } from './context/FirebaseContext';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+// This is the standard way to render a React app in React 18
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
     <BrowserRouter>
       <FirebaseProvider>
         <App />
       </FirebaseProvider>
     </BrowserRouter>
-  </StrictMode>
+  </React.StrictMode>,
 );
