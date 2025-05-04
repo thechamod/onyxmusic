@@ -4,7 +4,6 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import LoadingScreen from './components/common/LoadingScreen';
-import useScrollAnimation from './hooks/useScrollAnimation';
 
 // Lazy load components for better performance
 const Home = React.lazy(() => import('./pages/Home'));
