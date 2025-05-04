@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./your-service-account-key.json'); // Make sure this file is in the same folder
+const serviceAccount = require('./al-master-1cd6e-firebase-adminsdk-fbsvc-213a107551.json'); // Make sure this file is in the same folder
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
