@@ -13,8 +13,6 @@ const Studio = React.lazy(() => import('./pages/Studio'));
 const Booking = React.lazy(() => import('./pages/Booking'));
 const Contact = React.lazy(() => import('./pages/Contact'));
 const ScrollingBackground3D = React.lazy(() => import('./components/ScrollingBackground3D'));
-const MusicGadget3D = React.lazy(() => import('./components/MusicGadget3D'));
-const MobileGadget3D = React.lazy(() => import('./components/MobileGadget3D'));
 
 function App(): JSX.Element {
   // State for device detection and loading
@@ -70,22 +68,6 @@ function App(): JSX.Element {
             <Suspense fallback={<div>Loading 3D environment...</div>}>
               <ScrollingBackground3D />
             </Suspense>
-
-            {/* 3D Music Gadget - only show on non-mobile */}
-            {!isMobile && (
-              <Suspense fallback={null}>
-                <MusicGadget3D />
-              </Suspense>
-            )}
-
-            {/* Mobile-specific 3D Gadget */}
-            {isMobile && (
-              <div className="mobile-3d-placeholder">
-                <Suspense fallback={null}>
-                  <MobileGadget3D />
-                </Suspense>
-              </div>
-            )}
 
             {/* Additional content */}
             <div className="content">
