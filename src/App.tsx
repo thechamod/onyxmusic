@@ -42,47 +42,45 @@ function App(): JSX.Element {
     };
   }, []);
 
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
-    <>
-      {isLoading ? (
-        <LoadingScreen />
-      ) : (
-        <div className="flex flex-col min-h-screen app">
-          <Navbar />
+    <div className="flex flex-col min-h-screen app">
+      <Navbar />
 
-          {/* Main content */}
-          <main className="flex-grow">
-            <AnimatePresence mode="wait">
-              <Suspense fallback={<LoadingScreen />}>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/artists" element={<Artists />} />
-                  <Route path="/studio" element={<Studio />} />
-                  <Route path="/booking" element={<Booking />} />
-                  <Route path="/contact" element={<Contact />} />
-                </Routes>
-              </Suspense>
-            </AnimatePresence>
+      {/* Main content */}
+      <main className="flex-grow">
+        <AnimatePresence mode="wait">
+          <Suspense fallback={<LoadingScreen />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/artists" element={<Artists />} />
+              <Route path="/studio" element={<Studio />} />
+              <Route path="/booking" element={<Booking />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Suspense>
+        </AnimatePresence>
 
-            {/* 3D Background */}
-            <Suspense fallback={<div>Loading 3D environment...</div>}>
-              <ScrollingBackground3D />
-            </Suspense>
+        {/* 3D Background */}
+        <Suspense fallback={<div>Loading 3D environment...</div>}>
+          <ScrollingBackground3D />
+        </Suspense>
 
-            {/* Additional content */}
-            <div className="content">
-              {/* Section with fade-in animation */}
-              <section className="fade-in">
-                <h1>Onyx Music</h1>
-                <p>Experience the best in music production.</p>
-              </section>
-            </div>
-          </main>
-
-          <Footer />
+        {/* Additional content */}
+        <div className="content">
+          {/* Section with fade-in animation */}
+          <section className="fade-in">
+            <h1>Onyx Music</h1>
+            <p>Experience the best in music production.</p>
+          </section>
         </div>
-      )}
-    </>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
