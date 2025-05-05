@@ -62,11 +62,17 @@ async function notifyTelegram(type: 'booking' | 'contact', data: any) {
       body: JSON.stringify({ type, data }),
     });
 
+    const result = await response.json();
+    
     if (!response.ok) {
-      throw new Error('Failed to send Telegram notification');
+      throw new Error(result.error || 'Failed to send Telegram notification');
     }
+
+    return result;
   } catch (error) {
     console.error('Error sending Telegram notification:', error);
+    // Don't throw the error - we don't want to break the booking flow if notification fails
+    return { error: 'Notification failed but booking was saved' };
   }
 }
 
@@ -84,8 +90,8 @@ export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }
       
       await set(newBookingRef, bookingWithTimestamp);
       
-      // Send Telegram notification
-      await notifyTelegram('booking', booking);
+      // Send Telegram notification - but don't wait for it
+      notifyTelegram('booking', booking).catch(console.error);
       
       return newBookingRef.key || '';
     } catch (error) {
@@ -109,8 +115,8 @@ export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }
       
       await set(newMessageRef, messageData);
       
-      // Send Telegram notification
-      await notifyTelegram('contact', messageData);
+      // Send Telegram notification - but don't wait for it
+      notifyTelegram('contact', messageData).catch(console.error);
       
       return newMessageRef.key || '';
     } catch (error) {
