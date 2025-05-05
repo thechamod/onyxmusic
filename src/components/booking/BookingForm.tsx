@@ -28,15 +28,7 @@ const BookingForm: React.FC = () => {
     setSubmitStatus('idle');
     
     try {
-      await saveBooking({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        date: formData.date,
-        service: formData.service,
-        message: formData.message
-      });
-      
+      await saveBooking(formData);
       setSubmitStatus('success');
       setFormData({
         name: '',
