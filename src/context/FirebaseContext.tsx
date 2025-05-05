@@ -50,6 +50,26 @@ interface FirebaseContextType {
 
 const FirebaseContext = createContext<FirebaseContextType | undefined>(undefined);
 
+// Function to notify Telegram
+async function notifyTelegram(type: 'booking' | 'contact', data: any) {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/telegram-notify`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ type, data }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to send Telegram notification');
+    }
+  } catch (error) {
+    console.error('Error sending Telegram notification:', error);
+  }
+}
+
 export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Save a new booking order
   const saveBooking = async (booking: Omit<BookingOrder, 'id' | 'timestamp'>): Promise<string> => {
@@ -63,6 +83,10 @@ export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }
       };
       
       await set(newBookingRef, bookingWithTimestamp);
+      
+      // Send Telegram notification
+      await notifyTelegram('booking', booking);
+      
       return newBookingRef.key || '';
     } catch (error) {
       console.error('Error saving booking:', error);
@@ -76,12 +100,17 @@ export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }
       const messagesRef = ref(database, 'contactMessages');
       const newMessageRef = push(messagesRef);
       
-      await set(newMessageRef, {
+      const messageData = {
         name,
         email,
         message,
         timestamp: Date.now()
-      });
+      };
+      
+      await set(newMessageRef, messageData);
+      
+      // Send Telegram notification
+      await notifyTelegram('contact', messageData);
       
       return newMessageRef.key || '';
     } catch (error) {
