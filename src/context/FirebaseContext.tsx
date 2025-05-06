@@ -50,32 +50,6 @@ interface FirebaseContextType {
 
 const FirebaseContext = createContext<FirebaseContextType | undefined>(undefined);
 
-// Function to notify Telegram
-async function notifyTelegram(type: 'booking' | 'contact', data: any) {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/telegram-notify`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ type, data }),
-    });
-
-    const result = await response.json();
-    
-    if (!response.ok) {
-      throw new Error(result.error || 'Failed to send Telegram notification');
-    }
-
-    return result;
-  } catch (error) {
-    console.error('Error sending Telegram notification:', error);
-    // Don't throw the error - we don't want to break the booking flow if notification fails
-    return { error: 'Notification failed but booking was saved' };
-  }
-}
-
 export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   // Save a new booking order
   const saveBooking = async (booking: Omit<BookingOrder, 'id' | 'timestamp'>): Promise<string> => {
@@ -89,10 +63,6 @@ export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }
       };
       
       await set(newBookingRef, bookingWithTimestamp);
-      
-      // Send Telegram notification - but don't wait for it
-      notifyTelegram('booking', booking).catch(console.error);
-      
       return newBookingRef.key || '';
     } catch (error) {
       console.error('Error saving booking:', error);
@@ -106,17 +76,12 @@ export const FirebaseProvider: React.FC<{ children: ReactNode }> = ({ children }
       const messagesRef = ref(database, 'contactMessages');
       const newMessageRef = push(messagesRef);
       
-      const messageData = {
+      await set(newMessageRef, {
         name,
         email,
         message,
         timestamp: Date.now()
-      };
-      
-      await set(newMessageRef, messageData);
-      
-      // Send Telegram notification - but don't wait for it
-      notifyTelegram('contact', messageData).catch(console.error);
+      });
       
       return newMessageRef.key || '';
     } catch (error) {
