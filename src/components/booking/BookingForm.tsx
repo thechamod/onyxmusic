@@ -13,7 +13,7 @@ const BookingForm: React.FC = () => {
     service: 'recording',
     message: ''
   });
-  
+  a
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   
@@ -28,7 +28,15 @@ const BookingForm: React.FC = () => {
     setSubmitStatus('idle');
     
     try {
-      await saveBooking(formData);
+      await saveBooking({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        date: formData.date,
+        service: formData.service,
+        message: formData.message
+      });
+      
       setSubmitStatus('success');
       setFormData({
         name: '',
