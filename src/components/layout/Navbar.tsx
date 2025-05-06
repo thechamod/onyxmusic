@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Flame } from 'lucide-react';
+import { Menu, X, Gem } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
     <nav className={navbarClasses}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 z-20">
-          <Flame size={28} className="text-fire-red animate-flame-pulse" />
+          <Gem size={28} className="text-fire-red animate-gem-pulse" />
           <span className="font-display text-2xl font-bold fire-text">ONYX</span>
         </Link>
 
