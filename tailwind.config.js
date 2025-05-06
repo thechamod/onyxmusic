@@ -20,16 +20,22 @@ export default {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'flame-pulse': 'flamePulse 3s ease-in-out infinite',
+        'gem-pulse': 'gemPulse 3s ease-in-out infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
         },
-        flamePulse: {
-          '0%, 100%': { filter: 'brightness(1) drop-shadow(0 0 8px rgba(255, 58, 0, 0.5))' },
-          '50%': { filter: 'brightness(1.2) drop-shadow(0 0 15px rgba(255, 58, 0, 0.8))' },
+        gemPulse: {
+          '0%, 100%': { 
+            filter: 'brightness(1) drop-shadow(0 0 8px rgba(255, 58, 0, 0.5))',
+            transform: 'rotate(0deg)'
+          },
+          '50%': { 
+            filter: 'brightness(1.2) drop-shadow(0 0 15px rgba(255, 58, 0, 0.8))',
+            transform: 'rotate(15deg)'
+          },
         },
       },
       backgroundImage: {
