@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Flame, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import { Gem, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           {/* Logo & Info */}
           <div className="col-span-1 md:col-span-1 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <Flame size={24} className="text-fire-red" />
+              <Gem size={24} className="text-fire-red" />
               <span className="font-display text-xl font-bold fire-text">ONYX MUSIC</span>
             </div>
             <p className="text-gray-400 mb-4">
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-fire-red mt-1 flex-shrink-0" />
-                <span className="text-gray-400">305/4, Mahawehera, Madipola, Sri Lanka</span>
+                <span className="text-gray-400">305/4 Mahawehera, Madipola, Sri Lanka</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-fire-red flex-shrink-0" />
