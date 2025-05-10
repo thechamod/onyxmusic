@@ -55,8 +55,8 @@ const Studio: React.FC = () => {
       items: [
         'FL Studio',
         'Logic Pro X',
-        'Ableton Live Suite',
-        'Native Instruments Komplete',
+        'Ozone',
+        'Slate Digital Complete Bundle',
         'Waves Complete Plugin Bundle'
       ]
     },
@@ -80,17 +80,6 @@ const Studio: React.FC = () => {
         'Gibson Les Paul Custom',
         'Moog Subsequent 37 Synthesizer',
         'Roland TR-8S Drum Machine'
-      ]
-    },
-    {
-      title: 'Outboard Gear',
-      icon: <Speaker size={28} />,
-      items: [
-        'Universal Audio LA-2A Compressor',
-        '1176LN Limiting Amplifier',
-        'Lexicon PCM96 Reverb',
-        'Empirical Labs Distressor',
-        'Pultec EQP-1A Program Equalizer'
       ]
     },
     {
@@ -208,7 +197,7 @@ const Studio: React.FC = () => {
               className="relative rounded-lg overflow-hidden h-80"
             >
               <img 
-                src="https://images.pexels.com/photos/4571123/pexels-photo-4571123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                src="https://murrant.ca/wp-content/uploads/2019/01/booth-social-bw.jpg" 
                 alt="Vocal Booth" 
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -241,7 +230,7 @@ const Studio: React.FC = () => {
                   Live Room
                 </h3>
                 <p className="text-gray-200">
-                  Spacious area for full band recordings and instrument tracking.
+                  COMING SOON!
                 </p>
               </div>
             </motion.div>
