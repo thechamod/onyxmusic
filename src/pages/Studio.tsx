@@ -42,11 +42,10 @@ const Studio: React.FC = () => {
       title: 'Recording Equipment',
       icon: <Mic2 size={28} />,
       items: [
-        'Neumann U87 Microphone',
+        'CM25 MkIII Condenser Microphone',
         'API 1608 Console',
         'Universal Audio Apollo Interfaces',
-        'Avalon VT-737SP Preamp',
-        'Shure SM7B Microphones'
+        'Avalon VT-737SP Preamp'
       ]
     },
     {
@@ -66,9 +65,7 @@ const Studio: React.FC = () => {
       items: [
         'Focal Shape 65 Monitors',
         'Yamaha NS10 Reference Monitors',
-        'Audeze LCD-X Headphones',
-        'Sonarworks Reference Calibration',
-        'Subpac S2 Tactile Monitoring System'
+        'SH-450 Headphones'
       ]
     },
     {
@@ -76,17 +73,13 @@ const Studio: React.FC = () => {
       icon: <Music size={28} />,
       items: [
         'Yamaha C7 Grand Piano',
-        'Fender Stratocaster & Telecaster',
-        'Gibson Les Paul Custom',
-        'Moog Subsequent 37 Synthesizer',
-        'Roland TR-8S Drum Machine'
+        'Ashton D20CEQNTM Acoustic Guitar'
       ]
     },
     {
       title: 'Studio Amenities',
       icon: <Users size={28} />,
       items: [
-        'Acoustically Treated Live Room',
         'Isolated Vocal Booth',
         'Artist Lounge & Relaxation Area',
         'High-Speed Internet & Streaming',
