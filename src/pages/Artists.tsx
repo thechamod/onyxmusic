@@ -157,7 +157,7 @@ const Artists: React.FC = () => {
     {
       name: 'Y30',
       role: 'Rapper / Songwriter',
-      image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/481479195_1846203492834089_8896037436071034314_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG9se2S4uUrIKc6HXGmKbZH9I5UT-9nTV_0jlRP72dNXxjC28SVEKyt9vOZ4we0zBL_1NqMtP95C-CG2f2LqKBJ&_nc_ohc=499dZoEbFyYQ7kNvwEr9pE2&_nc_oc=AdnpLqT_-NwwBKGxJO_y1DOWFNQe4VTeUI1JnqHIbtieRmVM9jR75MlkMM2rZGDqsw0&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=H7ZkQqM8OwwSKWtiama6IA&oh=00_AfGcyR_nJUNqkIMA5UmPQ7w3ui5S453iBmtOuhnSq4C6_A&oe=681BD102',
+      image: 'https://files.catbox.moe/my8lio.jpg',
       bio: 'Y30 is a powerful rapper and lyricist in the Bloodroots team, known for his aggressive style and bold creativity. He blends hardcore rap with rock energy, delivering fast-paced flows and raw emotion. His music reflects passion, rebellion, and fearless expression, making him a standout voice in the underground scene.',
       socialLinks: {
         instagram: 'https://www.instagram.com/yasiruthechild/',
