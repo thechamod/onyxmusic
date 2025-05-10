@@ -169,7 +169,7 @@ const Artists: React.FC = () => {
     {
       name: 'W',
       role: 'Rapper / Songwriter',
-      image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/472345858_1312545273091867_1276585712862569140_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHH1St2HWdJ1ycZshwEs8qeTeCvnX8POL5N4K-dfw84vm1Euf6EJDdWakRjZgUSPhvx8K9dvbxgqzfYLkc6I6lr&_nc_ohc=3XMsGl_d390Q7kNvwELHKp9&_nc_oc=AdkG2TzzmHJVnDZkE0siOOgHdEW2UyI5u_RUAuI3hvpvXmpY4zWwh4_r28bTho79kxI&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=2qGLrYOLxZiu_efh4y4AKg&oh=00_AfHlqd2fzVbR9LTM7QtFtfmga7Pc0LkVxa93PRhinv4XoA&oe=681BDA23',
+      image: 'https://files.catbox.moe/93icrh.jpg',
       bio: 'W is a dynamic trap artist in the Bloodroots team, known for his smooth flows, melodic style, and emotional depth. His music blends modern trap beats with real-life feelings, delivering a vibe that s both catchy and heartfelt.',
       socialLinks: {
         instagram: 'https://www.instagram.com/d.re_w_/',
@@ -181,7 +181,7 @@ const Artists: React.FC = () => {
     {
       name: 'RIX',
       role: 'Rapper / Songwriter',
-      image: 'https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/485040617_688294940374187_6007777225130452546_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHRaMrqtxX_GW3SDIFMNHGPiCCWyt45Cy6IIJbK3jkLLhl1rJn7in3oWNT4yyMMJtXxOfBiVnC0WipO34RLpBuW&_nc_ohc=73WHcWlP3woQ7kNvwGDHOnE&_nc_oc=AdnDyk5Kr112UfVCm5dgjzNE_8aks9_FxeR2IAfbN6OyBeYHQM_Lomb4eUmnOfbw78M&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=VHucCeorgIdEMWs2cqOohA&oh=00_AfFe7uV0QgFt6_R_Vsm5-SsrSQ7Dxpl9C9KKttVbfT8ydw&oe=681BD295',
+      image: 'https://files.catbox.moe/vqvq5q.jpg',
       bio: 'Rix brings raw intensity to the Bloodroots team with his aggressive lyrics and rough, commanding vocals. A true lyrical beast, his style blends dark energy with fearless expression, turning pain and power into hard-hitting tracks that leave a lasting impact. His voice is the roar behind the rage.',
       socialLinks: {
         instagram: 'https://www.instagram.com/chamidu.senarathna/',
